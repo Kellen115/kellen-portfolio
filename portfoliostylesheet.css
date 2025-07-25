@@ -1,4 +1,5 @@
-  body {
+/* Body & overall layout */
+body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: linear-gradient(90deg, rgba(35, 35, 87, 1) 0%, rgba(84, 29, 29, 1) 50%, rgba(48, 64, 87, 1) 100%);
@@ -17,6 +18,7 @@ body.loaded {
   opacity: 1;
 }
 
+/* Intro section */
 #intro {
   max-width: 700px;
   width: 100%;
@@ -37,12 +39,14 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
+/* Paragraph */
 #intro p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
 
+/* Image */
 #first-img {
   max-width: 700px;
   width: 100%;
@@ -69,6 +73,7 @@ h4 {
   background-color: #2563eb;
 }
 
+/* Button */
 .open-button {
   margin: 3rem auto 1rem;
   padding: 0.75rem 1.6rem;
@@ -86,7 +91,8 @@ h4 {
   background-color: #ea580c;
 }
 
-  #projects {
+/* Projects container */
+#projects {
   margin: 2rem auto 0 auto;
   text-align: center;
   max-width: 700px;
@@ -104,6 +110,7 @@ h4 {
   transform: scale(1.03);
 }
 
+/* About section formatting */
 #intro h3 {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
@@ -184,19 +191,19 @@ h4 {
 }
 
 #extra-info {
-  display: none;              
-  max-width: 700px;     
-  margin: 40px auto 80px;  
-  padding: 20px 30px;        
-  background: rgba(255, 255, 255, 0.1); 
-  border-radius: 12px;       
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
-  color: #f0f0f0;            
-  font-size: 1.1rem;         
-  line-height: 1.6;          
+  display: none;              /* Initially hidden, revealed via JS */
+  max-width: 700px;           /* Same max width as other sections */
+  margin: 40px auto 80px;     /* Space above and below, centered */
+  padding: 20px 30px;         /* Comfortable padding */
+  background: rgba(255, 255, 255, 0.1); /* Slight translucent background */
+  border-radius: 12px;        /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  color: #f0f0f0;             /* Light text for readability */
+  font-size: 1.1rem;          /* Slightly larger font */
+  line-height: 1.6;           /* Comfortable line spacing */
   font-family: 'Inter', sans-serif;
-  text-align: center;        
-  letter-spacing: 0.02em;    
+  text-align: center;         /* Center the text */
+  letter-spacing: 0.02em;     /* Slight letter spacing for neatness */
   transition: opacity 0.5s ease;
   opacity: 0;
 }
