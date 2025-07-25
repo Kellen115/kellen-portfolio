@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfoliostylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section id="intro">
+            <div class="intro-content">
+                <h1 id="typewriter"></h1>
+                <h4>Aspiring Software Engineer student studying at Western Governors University</h4><br>
+                <img id ="first-img" src="https://images.unsplash.com/photo-1618335829737-2228915674e0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <h3>About Me</h3>
+                <a id="Linkedin-url" href="https://www.linkedin.com/in/kellen-gutierrez-83710529b/" target="_blank">LINKEDIN</a>
+                <div class="about-text">
+                    <br>
+                    <p>
+                        I’m passionate about learning by building. I’ve created many personal projects such as a flashcard app, a snake game, and a QA usability report on the W3Schools website.
+                    </p>
+                    <p>
+                        Right now, I’m seeking an internship where I can grow my technical skills, contribute to meaningful projects, and collaborate with experienced developers.
+                    </p>
+                    <p>
+                        Although I’m early in my journey, I’m detail-oriented, self-driven, and always excited to take on new challenges in tech.
+                    </p>
+                </div>
+            </div>
+        </section>  
+
+        <button onclick="showProjects()" class="open-button">View my Work</button>
+        
+        <br>
+        <div id="projects" class="project-container" style="display: none;">
+            <a class="project-card" href="https://kellen115.github.io/Flashcards/" target="_blank">
+                <img src="Screenshot 2025-07-24 213629.png" alt="Flashcard App Screenshot">
+                <div class="project-description">
+                    <p>Flashcard App built with Javascript and React to help memorize concepts.</p>
+                </div>
+            </a>
+            <a class="project-card" href="https://kellen115.github.io/Snake-Game/" target="_blank">
+                <img src="Screenshot 2025-07-24 212056.png" alt="Snake-Game Screenshot">
+                <div class="project-description">
+                    <p>Snake Game built with HTML/CSS/JavaScript to test my skills.</p>
+                </div>
+            </a>
+            <a class="project-card" href="QA Report - W3schools.pdf" target="_blank">
+                <img src="Screenshot 2025-07-24 213519.png" alt="QA Report Screenshot">
+                <div class="project-description">
+                    <p>QA test focused on identifying validation issues and usability concerns.</p>
+                </div>
+            </a>
+            <a class="project-card" href="https://westerngovernorsuniversity-my.sharepoint.com/:p:/r/personal/kgutie28_wgu_edu/_layouts/15/Doc.aspx?sourcedoc=%7B5F277DD1-CB8C-436B-BE04-BA39F84A3C6F%7D&file=D479%20Interactive%20Prototype.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1&wdOrigin=APPHOME-WEB.DIRECT%2CAPPHOME-WEB.JUMPBACKIN&wdPreviousSession=29e470ff-b6b3-492c-a0fa-b50e63391866&wdPreviousSessionSrc=AppHomeWeb&ct=1753418580803" target="_blank">
+                <img src="Screenshot 2025-07-24 214623.png" alt="Wireframe Screenshot">
+                <div class="project-description">
+                    <p>Wireframe and interactive prototype of UX design academic project.</p>
+                </div>
+            </a>
+        </div>
+
+        <div id="extra-info" class="hidden-text">
+            <p>
+                Active Skillset:
+                HTML, CSS, Javascript, Angular, React, Python, SQL, GIT & Version Control, Java, UI/UX Design, QA
+                <br>
+                <br>
+                Currently Working on:
+                AWS Cloud, Java Frameworks, Agile, ITIL 4 Foundation certification, Mobile App Development
+            </p>
+            <br>
+            <a href="Kellen_Gutierrez_Resume.pdf" target="_blank" class="resume-button">Download Resume</a>
+
+        </div>
+
+        <div id="contact-section" class="hidden-text">
+            <section id="contact">
+                <h3>Contact Me</h3>
+
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="contact-links">
+                    <p>Email: <a href="mailto:kellenag115@gmail.com">kellenag115@gmail.com</a></p>
+                    <p>GitHub: <a href="https://github.com/Kellen115" target="_blank">https://github.com/Kellen115</a></p>
+                </div>
+            </section>
+        </div>
+
+
+
+    </main>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        const text = "Kellen Gutierrez";
+        let i = 0;
+        const speed = 150;
+        const elem = document.getElementById("typewriter");
+
+        function typeWriter() {
+            if (i < text.length) {
+                elem.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+
+
+        function showProjects() {
+            const projectsSection = document.getElementById("projects");
+            const cards = document.querySelectorAll(".project-card");
+            const extraInfo = document.getElementById("extra-info");
+            const contactSection = document.getElementById("contact-section");
+
+            document.querySelector(".open-button").style.display = "none";
+
+            projectsSection.style.display = "grid";
+
+            setTimeout(() => {
+                projectsSection.style.opacity = 1;
+
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add("visible");
+                    }, index * 300);
+                });
+            }, 100);
+
+            extraInfo.classList.remove("hidden-text");
+            setTimeout(() => {
+                extraInfo.classList.add("visible");
+            }, 200);
+
+            contactSection.classList.remove("hidden-text");
+            setTimeout(() => {
+                contactSection.classList.add("visible");
+            }, 300);
+
+            projectsSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.querySelector('[name="name"]').value;
+        const email = document.querySelector('[name="email"]').value;
+        const message = document.querySelector('[name="message"]').value;
+
+        fetch("https://contact-form-i5rb.onrender.com/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.success) {
+            alert("Message sent!");
+            document.getElementById("contactForm").reset();
+            } else {
+            alert("Failed to send message.");
+            }
+        })
+        .catch((err) => {
+            alert("Something went wrong.");
+            console.error(err);
+        });
+    });
+    </script>
+   
+
+</body>
+</html>
