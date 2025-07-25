@@ -1,0 +1,295 @@
+/* Body & overall layout */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(90deg, rgba(35, 35, 87, 1) 0%, rgba(84, 29, 29, 1) 50%, rgba(48, 64, 87, 1) 100%);
+  color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Intro section */
+#intro {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Paragraph */
+#intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* Image */
+#first-img {
+  max-width: 700px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  margin-top: 2rem;
+  object-fit: cover;
+}
+
+/* LinkedIn link */
+#Linkedin-url {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#Linkedin-url:hover {
+  background-color: #2563eb;
+}
+
+/* Button */
+.open-button {
+  margin: 3rem auto 1rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 1.1rem;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.open-button:hover {
+  background-color: #ea580c;
+}
+
+/* Projects container */
+#projects {
+  margin: 2rem auto 0 auto;
+  text-align: center;
+  max-width: 700px;
+}
+
+#flashcard-img img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+#flashcard-img img:hover {
+  transform: scale(1.03);
+}
+
+/* About section formatting */
+#intro h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-text {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  color: #f0f0f0;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.03);
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-description {
+  padding: 10px 0 0;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 90%;
+  color: #ddd;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.project-card:hover .project-description {
+  opacity: 1;
+  max-height: 100px; /* adjust as needed */
+}
+
+.hidden-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#extra-info {
+  display: none;              /* Initially hidden, revealed via JS */
+  max-width: 700px;           /* Same max width as other sections */
+  margin: 40px auto 80px;     /* Space above and below, centered */
+  padding: 20px 30px;         /* Comfortable padding */
+  background: rgba(255, 255, 255, 0.1); /* Slight translucent background */
+  border-radius: 12px;        /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  color: #f0f0f0;             /* Light text for readability */
+  font-size: 1.1rem;          /* Slightly larger font */
+  line-height: 1.6;           /* Comfortable line spacing */
+  font-family: 'Inter', sans-serif;
+  text-align: center;         /* Center the text */
+  letter-spacing: 0.02em;     /* Slight letter spacing for neatness */
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+#extra-info.visible {
+  display: block;
+  opacity: 1;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #2563eb;
+}
+
+#contact {
+  margin-top: 4rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+#contact-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}   
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2563eb;
+}
+
+.contact-links {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.contact-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
