@@ -138,8 +138,8 @@ h4 {
 .project-card img {
   width: auto;
   height: auto;
-  max-width: 400px;
-  max-height: 300px;
+  max-width: 290px;
+  max-height: 290px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
